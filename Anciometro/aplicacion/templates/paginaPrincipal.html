@@ -1,0 +1,30 @@
+{% load static %}
+{% include 'core/base.html' %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    
+</head>
+<body>
+    {% block content %}
+    
+    
+    <div class="container">
+        <h2>Bienvenido Usuario</h2>
+        <div class="options">
+            <a href="{% url 'aplicacion:ansiedad' %}">Realizar Test de Ansiedad</a>
+            <a href="{% url 'aplicacion:depresion' %}">Realizar Test de Depresión</a>
+            <a href="{% url 'aplicacion:estadisticas' %}">Ver Estadísticas</a>
+            <a href="{% url 'aplicacion:seguimiento' %}" >Seguimiento de Progreso</a>
+        </div>
+    </div>
+    <!-- Botón de Cerrar Sesión 
+    <a  href="{% url 'salir' %}" class="logout-button">Cerrar Sesión</a>-->
+    {% endblock %}
+</body>
+</html>
+

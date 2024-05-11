@@ -1,0 +1,102 @@
+/* Estilos generales */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-image: url('nature.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.options a {
+    margin: 5px 0;
+    padding: 15px 20px;
+    border-radius: 8px;
+    background-color: #4caf50;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.options a:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para el botón de cerrar sesión */
+.logout-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: #dc3545;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #c82333;
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+/* Estilos para la lista de navegación */
+.navbar-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para los elementos de la lista */
+.navbar-list li {
+    display: inline;
+    margin-right: 20px;
+}
+
+/* Estilos para los enlaces */
+.navbar-list li a {
+    color: white;
+    text-decoration: none;
+}
+

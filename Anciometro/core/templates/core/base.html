@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "stylesperfus.css" %}" >
+    <title>Aplicacion</title>
+    
+</head>
+<body>
+    
+    
+    
+    <nav class="navbar">
+        <ul class="navbar-list">
+            <li><a href="{% url 'home' %}" class="navbar-link">Inicio</a></li>
+            <li><a href="{% url 'IndexView' %}" class="navbar-link">Principal</a></li>
+    
+            {% if request.user.is_authenticated %}
+                <li><a href="{% url 'salir' %}" class="logout-button">Cerrar Sesión</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}" class="navbar-link">Ingresar</a></li>
+                <li><a href="{% url 'register' %}" class="navbar-link">Registrarse</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    
+</body>
+</html>

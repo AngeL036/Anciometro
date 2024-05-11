@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Depresión</title>
+    <link rel="stylesheet" href="{% static "stylesperfus.css" %}" >
+</head>
+<body>
+    <div class="container">
+        <h2>Test de Depresión</h2>
+        <form id="miFormulario" action="{% url 'aplicacion:respuestas1' %}"  method="post">
+            {% csrf_token %}
+            <label for="pregunta1">¿Te sientes triste o deprimido con frecuencia?</label><br>
+            <input type="radio" name="pregunta1" value=1> Sí
+            <input type="radio" name="pregunta1" value=0> No<br><br>
+            
+            <label for="pregunta2">¿Tienes pérdida de interés en actividades que solías disfrutar?</label><br>
+            <input type="radio" name="pregunta2" value=1> Sí
+            <input type="radio" name="pregunta2" value=0> No<br><br>
+            
+            <label for="pregunta3">¿Sientes fatiga o falta de energía la mayor parte del tiempo?</label><br>
+            <input type="radio" name="pregunta3" value=1> Sí
+            <input type="radio" name="pregunta3" value=0> No<br><br>
+            
+            <label for="pregunta4">¿Tienes problemas para dormir o duermes demasiado?</label><br>
+            <input type="radio" name="pregunta4" value=1> Sí
+            <input type="radio" name="pregunta4" value=0> No<br><br>
+            
+            <label for="pregunta5">¿Sientes cambios en tu apetito o peso (aumento o pérdida)?</label><br>
+            <input type="radio" name="pregunta5" value=1> Sí
+            <input type="radio" name="pregunta5" value=0> No<br><br>
+            
+            <label for="pregunta6">¿Tienes dificultades para concentrarte, recordar cosas o tomar decisiones?</label><br>
+            <input type="radio" name="pregunta6" value=1> Sí
+            <input type="radio" name="pregunta6" value=0> No<br><br>
+            
+            <label for="pregunta7">¿Sientes irritabilidad o agitación?</label><br>
+            <input type="radio" name="pregunta7" value=1> Sí
+            <input type="radio" name="pregunta7" value=0> No<br><br>
+            
+            <label for="pregunta8">¿Sientes falta de autoestima o sentimientos de inutilidad?</label><br>
+            <input type="radio" name="pregunta8" value=1> Sí
+            <input type="radio" name="pregunta8" value=0> No<br><br>
+            
+            <label for="pregunta9">¿Tienes pensamientos recurrentes de muerte o suicidio?</label><br>
+            <input type="radio" name="pregunta9" value=1> Sí
+            <input type="radio" name="pregunta9" value=0> No<br><br>
+            
+            <label for="pregunta10">¿Sientes agotamiento o falta de motivación?</label><br>
+            <input type="radio" name="pregunta10" value=1> Sí
+            <input type="radio" name="pregunta10" value=0> No<br><br>
+            
+            <label for="pregunta11">¿Tienes problemas para relacionarte con los demás o sientes soledad?</label><br>
+            <input type="radio" name="pregunta11" value=1> Sí
+            <input type="radio" name="pregunta11" value=0> No<br><br>
+            
+            <label for="pregunta12">¿Has notado cambios en tu actividad sexual?</label><br>
+            <input type="radio" name="pregunta12" value=1> Sí
+            <input type="radio" name="pregunta12" value=0> No<br><br>
+            
+            <input type="submit" value="Enviar" id="enviarBtn">
+        </form>
+    </div>
+    <script>
+        document.getElementById("miFormulario").addEventListener("submit", function(event) {
+            // Obtener todos los inputs tipo radio
+            var radios = document.querySelectorAll('input[type="radio"]');
+            var seleccionado = false;
+    
+            // Verificar si al menos uno de los inputs está seleccionado
+            radios.forEach(function(radio) {
+                if (radio.checked) {
+                    seleccionado = true;
+                }
+            });
+    
+            // Si ningún input está seleccionado, prevenir el envío del formulario
+            if (!seleccionado) {
+                event.preventDefault();
+                alert("Por favor, responde todas las preguntas antes de enviar.");
+            }
+        });
+    </script>
+</body>
+</html>

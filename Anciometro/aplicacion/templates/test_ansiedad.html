@@ -1,0 +1,70 @@
+{% load static %}
+{% include 'core/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Ansiedad</title>
+
+</head>
+<body>
+    {% block content %}
+    <div class="container">
+        <h2>Test de Ansiedad</h2>
+        <form action="{% url 'aplicacion:respuestas2' %}" method="POST">
+            {% csrf_token %}
+            <label for="pregunta1">¿Sientes nerviosismo con frecuencia?</label><br>
+            <input type="radio" name="pregunta1" value=1> Sí
+            <input type="radio" name="pregunta1" value=0> No<br><br>
+            
+            <label for="pregunta2">¿Tienes dificultades para relajarte?</label><br>
+            <input type="radio" name="pregunta2" value=1> Sí
+            <input type="radio" name="pregunta2" value=0> No<br><br>
+            
+            <label for="pregunta3">¿Sientes palpitaciones o latidos rápidos del corazón?</label><br>
+            <input type="radio" name="pregunta3" value=1> Sí
+            <input type="radio" name="pregunta3" value=0> No<br><br>
+            
+            <label for="pregunta4">¿Tienes sensación de ahogo o dificultad para respirar?</label><br>
+            <input type="radio" name="pregunta4" value=1> Sí
+            <input type="radio" name="pregunta4" value=0> No<br><br>
+            
+            <label for="pregunta5">¿Sientes temblores o sacudidas en el cuerpo?</label><br>
+            <input type="radio" name="pregunta5" value=1> Sí
+            <input type="radio" name="pregunta5" value=0> No<br><br>
+            
+            <label for="pregunta6">¿Tienes sudoración excesiva?</label><br>
+            <input type="radio" name="pregunta6" value=1> Sí
+            <input type="radio" name="pregunta6" value=0> No<br><br>
+            
+            <label for="pregunta7">¿Sientes molestias estomacales o náuseas?</label><br>
+            <input type="radio" name="pregunta7" value=1> Sí
+            <input type="radio" name="pregunta7" value=0> No<br><br>
+            
+            <label for="pregunta8">¿Tienes dificultades para concentrarte?</label><br>
+            <input type="radio" name="pregunta8" value=1> Sí
+            <input type="radio" name="pregunta8" value=0> No<br><br>
+            
+            <label for="pregunta9">¿Sientes tensión muscular?</label><br>
+            <input type="radio" name="pregunta9" value=1> Sí
+            <input type="radio" name="pregunta9" value=0> No<br><br>
+            
+            <label for="pregunta10">¿Tienes dificultades para conciliar el sueño o tienes insomnio?</label><br>
+            <input type="radio" name="pregunta10" value=1> Sí
+            <input type="radio" name="pregunta10" value=0> No<br><br>
+            
+            <label for="pregunta11">¿Tienes pensamientos recurrentes o preocupaciones constantes?</label><br>
+            <input type="radio" name="pregunta11" value=1> Sí
+            <input type="radio" name="pregunta11" value=0> No<br><br>
+            
+            <label for="pregunta12">¿Te sientes irritable o nervioso?</label><br>
+            <input type="radio" name="pregunta12" value=1> Sí
+            <input type="radio" name="pregunta12" value=0> No<br><br>
+            
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+    {% endblock %}
+</body>
+</html>

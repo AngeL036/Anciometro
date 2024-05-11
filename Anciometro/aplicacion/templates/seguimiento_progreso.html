@@ -1,0 +1,79 @@
+{% include 'core/base.html' %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento de Progreso</title>
+
+</head>
+<body>
+    {% block content %}
+    
+    <div class="container">
+        <h2>Seguimiento de Progreso</h2>
+        <!-- Información de seguimiento de ansiedad -->
+        <h3>Ansiedad</h3>
+        <p>Resultado del Último Test de Ansiedad: 80%</p>
+        <p>Resultado del Test de Ansiedad Actual: {{ansiedad}}%</p>
+        <p>
+            Comparación (Ansiedad):
+            
+            Si el resultado actual es mayor que el último resultado:
+            - "Vas bien, tu ansiedad está mejorando".
+            
+            Si el resultado actual es menor que el último resultado:
+            - "Necesitas prestar más atención a tu ansiedad, considera buscar ayuda profesional".
+            
+            Si el resultado actual es igual al último resultado:
+            - "Mantén el buen trabajo".
+        </p>
+        
+        <p>
+            La ansiedad puede tener un impacto significativo en tu vida diaria. Aquí hay algunas técnicas adicionales que puedes probar para manejar la ansiedad:
+        </p>
+        <ul>
+            <li>Practica la visualización creativa para imaginar situaciones relajantes.</li>
+            <li>Participa en actividades recreativas que disfrutes para reducir el estrés.</li>
+            <li>Establece límites saludables y aprende a decir "no" cuando sea necesario.</li>
+            <li>Busca apoyo emocional de amigos, familiares o grupos de apoyo.</li>
+            <li>Considera la terapia cognitivo-conductual (TCC) para aprender estrategias de afrontamiento.</li>
+            <li>Prueba la técnica de desensibilización sistemática para enfrentar gradualmente tus miedos.</li>
+            <li>Explora el mindfulness o la meditación para estar más presente en el momento.</li>
+        </ul>
+        
+        <!-- Información de seguimiento de depresión -->
+        <h3>Depresión</h3>
+        <p>Resultado del Último Test de Depresión: {{depresion}}%</p>
+        <p>Resultado del Test de Depresión Actual: {{depresion}}%</p>
+        <!--<p>Resultado del Test de Depresión Actual: {{ depresion }}%</p>-->
+        <p>
+            Comparación (Depresión):
+            
+            Si el resultado actual es mayor que el último resultado:
+            - "Necesitas prestar más atención a tu depresión, considera buscar ayuda profesional".
+            
+            Si el resultado actual es menor que el último resultado:
+            - "Vas bien, tu depresión está mejorando".
+            
+            Si el resultado actual es igual al último resultado:
+            - "Mantén el buen trabajo".
+        </p>
+        
+        <h3>Algunos consejos útiles:</h3>
+        <ul>
+            <li>Practica técnicas de respiración profunda para reducir la ansiedad y mejorar el estado de ánimo.</li>
+            <li>Realiza actividad física regularmente, ya que el ejercicio puede ayudar a aliviar los síntomas de la depresión.</li>
+            <li>Establece una rutina diaria estructurada para aumentar el sentido de control y estabilidad.</li>
+            <li>Concéntrate en actividades que te brinden placer y un sentido de logro.</li>
+            <li>Mantén un diario de gratitud para enfocarte en aspectos positivos de la vida.</li>
+            <li>Evita el aislamiento social y mantén conexiones con amigos y seres queridos.</li>
+            <li>Considera la terapia individual o grupal para explorar tus pensamientos y sentimientos.</li>
+        </ul>
+    </div>
+    {% endblock %}
+</body>
+</html>
