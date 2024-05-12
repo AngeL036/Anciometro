@@ -1,0 +1,76 @@
+.registration-container {
+    width: 100%;
+    height: 100vh; /* Establecer la altura del contenedor para ocupar toda la pantalla */
+    display: flex; /* Usar flexbox para centrar vertical y horizontalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex-direction: column; /* Alinear elementos en columna */
+}
+
+.registration-form {
+    width: 80%; /* Ajustar el ancho del formulario */
+    max-width: 400px; /* Mantener un ancho máximo */
+    padding: 20px;
+}
+
+.form-fields {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.form-fields label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-fields input[type="text"],
+.form-fields input[type="email"],
+.form-fields input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-fields input[type="text"]:focus,
+.form-fields input[type="email"]:focus,
+.form-fields input[type="password"]:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.btn-link {
+    display: inline-block;
+    margin-right: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.btn-submit {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+.registration-container h3 {
+    margin-top: 50px; /* Ajustar el margen superior para evitar que se superponga con la barra de navegación */
+    margin-bottom: 20px; /* Agregar un poco de espacio entre el título y el formulario */
+}

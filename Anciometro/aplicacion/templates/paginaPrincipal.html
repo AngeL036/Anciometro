@@ -1,20 +1,13 @@
-{% load static %}
+
 {% include 'core/base.html' %}
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Principal</title>
-    
-</head>
-<body>
     {% block content %}
     
     
     <div class="container">
-        <h2>Bienvenido Usuario</h2>
+        {% if request.user.is_authenticated %}
+            <h2>Bienvenido {{ user.username | upper }}</h2>
+        {% endif %}
         <div class="options">
             <a href="{% url 'aplicacion:ansiedad' %}">Realizar Test de Ansiedad</a>
             <a href="{% url 'aplicacion:depresion' %}">Realizar Test de Depresión</a>
@@ -25,6 +18,4 @@
     <!-- Botón de Cerrar Sesión 
     <a  href="{% url 'salir' %}" class="logout-button">Cerrar Sesión</a>-->
     {% endblock %}
-</body>
-</html>
 

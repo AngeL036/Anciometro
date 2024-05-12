@@ -2,9 +2,15 @@
 {% block content %}
 
 {% if request.user.is_authenticated %}
-    <hr>
+    
     <h4>
         {{ user.username | upper }},    Bienvenido
     </h4>
+    <p class="phrase">
+        {{ random_phrase }}
+    </p>
+{% else %}
+        <p class="login-prompt">Por favor, inicia sesión para continuar.</p>
+        <a href="{% url 'login' %}" class="btn"><button>Iniciar sesión</button></a>
 {% endif %}
 {% endblock %}

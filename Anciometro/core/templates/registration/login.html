@@ -1,8 +1,11 @@
-{% extends 'core/base.html' %}
 
+{% extends 'core/base.html' %}
+{% load static %}
 {% block content %}
 
 {% load crispy_forms_tags %}
+
+<link rel="stylesheet" href="{% static 'styles.css' %}">
 
 <h3>Login</h3>
 
@@ -13,8 +16,8 @@
     <div >
         <h5 >Ingrese sus credenciales</h5>
         {{ form | crispy }}
-        <a href="{% url 'home' %}" >Inicio</a>
-        <a href="{% url 'register' %}" >Registrarse</a>
+        <!--<a href="{% url 'home' %}" >Inicio</a>
+        <a href="{% url 'register' %}" >Registrarse</a>-->
         <button  type="submit">Iniciar Sesion</button>
     </div>
 </form>

@@ -1,22 +1,24 @@
 {% extends 'core/base.html' %}
-
+{% load static%}
 {% block content %}
 
 {% load crispy_forms_tags %}
+<link rel="stylesheet" href="{% static 'registro.css' %}">
+<div class="registration-container">
+    <h3>REGISTRO  DE USUARIO</h3>
 
-<h3>REGISTRO  DE USUARIO</h3>
+    <br>
 
-<br>
-
-<form action="" method="post">
-    {% csrf_token %}
-    <div>
-        <h5 >Complete todos los campos</h5>
-        {{ form | crispy }}
-        <a href="{% url 'home' %}" >Inicio</a>
-        <a href="{% url 'login' %}" >Iniciar Sesion</a>
-        <button  type="submit">Registrarse</button>
-    </div>
-</form>
-
+    <form action="" method="post" class="registration-form">
+        {% csrf_token %}
+        <div class="form-fields">
+            <h5 >Complete todos los campos</h5>
+            {{ form | crispy }}
+           <!-- <a href="{% url 'home' %}" class="btn-link">Inicio</a>
+            <a href="{% url 'login' %}" class="btn-link">Iniciar Sesion</a>-->
+            <button  type="submit"  class="btn-submit">Registrarse</button>
+        </div>
+        
+    </form>
+</div>
 {% endblock %}

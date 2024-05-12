@@ -1,13 +1,7 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test de Depresión</title>
-    <link rel="stylesheet" href="{% static "stylesperfus.css" %}" >
-</head>
-<body>
+
+{% include 'core/base.html' %}
+
+    {% block content %}
     <div class="container">
         <h2>Test de Depresión</h2>
         <form id="miFormulario" action="{% url 'aplicacion:respuestas1' %}"  method="post">
@@ -83,5 +77,4 @@
             }
         });
     </script>
-</body>
-</html>
+{% endblock %}
